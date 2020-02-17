@@ -14,12 +14,26 @@ Creating a Storage Bucket Storage --> Browser --> Create Storage Browser Go to c
 
 Running the Application
 
-Creating an App Engine App gcloud app create gcloud app deploy
+Change bucket name in app.yaml file
 
-CLOUD RUN Delete app.yaml Delete env folder (rm -rf env) Create Docker file (Check below)
+Creating an App Engine App 
+gcloud app create 
+gcloud app deploy
 
-FROM python:3.7-slim RUN apt-get update -y RUN apt-get install -y python-pip python-dev build-essential RUN apt-get install -y git RUN apt-get install -y ffmpeg COPY . /app WORKDIR /app RUN pip install -r requirements.txt RUN pip install git+git://github.com/ogut77/spleeter.git ENTRYPOINT ["python"] CMD ["app.py"]
+CLOUD RUN Delete app.yaml Delete env folder (rm -rf env) 
 
-gcloud builds submit --tag gcr.io/rythmai/faceexp
+Create Docker file (Check below)
+
+FROM python:3.7-slim
+RUN apt-get update -y
+RUN apt-get install -y python-pip python-dev build-essential 
+RUN apt-get install -y git 
+RUN apt-get install -y ffmpeg 
+COPY . /app WORKDIR /app 
+RUN pip install -r requirements.txt
+ENTRYPOINT ["python"] 
+CMD ["main.py"]
+
+gcloud builds submit --tag gcr.io/rythmai/facexp
 
 Go to Cloud Run and create services
