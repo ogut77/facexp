@@ -10,7 +10,9 @@ Create service account credentials from console IAM and Admin --> Create Service
 
 Create Virtual Environment virtualenv -p python3 env source env/bin/activate pip install -r requirements.txt
 
-Creating a Storage Bucket Storage --> Browser --> Create Storage Browser Go to console and export
+Creating a Storage Bucket Storage --> Browser --> Create Storage Browser 
+
+Go to console and Export Bucket ( export CLOUD_STORAGE_BUCKET=bucket_name )
 
 Running the Application
 
