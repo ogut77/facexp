@@ -2,7 +2,7 @@ Get the sample code
 
 git clone https://github.com/ogut77/facexp.git
 
-cd faceexp
+cd facexp
 
 Enable the APIs from API's from console Cloud Vision API Cloud Storage API
 
