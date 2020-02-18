@@ -22,7 +22,11 @@ Creating an App Engine App
 gcloud app create 
 gcloud app deploy
 
-CLOUD RUN Delete app.yaml Delete env folder (rm -rf env) 
+CLOUD RUN 
+
+Delete app.yaml 
+
+Delete env folder (rm -rf env) 
 
 Create Docker file (Check below)
 
