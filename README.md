@@ -27,13 +27,19 @@ CLOUD RUN Delete app.yaml Delete env folder (rm -rf env)
 Create Docker file (Check below)
 
 FROM python:3.7-slim
+
 RUN apt-get update -y
+
 RUN apt-get install -y python-pip python-dev build-essential 
-RUN apt-get install -y git 
-RUN apt-get install -y ffmpeg 
-COPY . /app WORKDIR /app 
+
+COPY . /app 
+
+WORKDIR /app 
+
 RUN pip install -r requirements.txt
+
 ENTRYPOINT ["python"] 
+
 CMD ["main.py"]
 
 gcloud builds submit --tag gcr.io/rythmai/facexp
